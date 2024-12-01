@@ -40,4 +40,12 @@ public class Grade {
         this.score = score;
     }
 
+    @Override
+    public String toString() {
+        return "Grade{" +
+                "name='" + name + '\'' +
+                ", subject='" + subject + '\'' +
+                ", score='" + score + '\'' +
+                '}';
+    }
 }
