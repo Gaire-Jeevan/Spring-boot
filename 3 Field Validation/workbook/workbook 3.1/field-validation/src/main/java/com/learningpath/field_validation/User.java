@@ -20,6 +20,7 @@ public class User {
     @Size(min = 2, message = "Second name is too short")
     private String lastName;
 
+    @Username(message = "Cannot contain special characters or uppercase characters ")
     @NotBlank(message = "Username cannot be blank")
     @Size(min = 7, message = "Username is too short")
     private String userName;
@@ -28,6 +29,7 @@ public class User {
     @Email(message = "Invalid email format")
     private String email;
 
+    @Age(message = "Age must be at least 18")
     @Past(message = "Date of birth must be in the past")
     @DateTimeFormat(pattern ="yyyy-MM-dd")
     private Date dateOfBirth;
