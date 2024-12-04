@@ -25,7 +25,10 @@ public class WorkBookController {
 
     @PostMapping("/submitItem")
     public String handleSubmit(@Valid User user, BindingResult result) {
-
+        if (user.getFirstName().equals(user.getLastName())) {
+            // Reject the lastName field with a custom message
+            result.rejectValue("lastName", "error.lastName", "First name and last name cannot be the same.");
+        }
         if (result.hasErrors()) return "sign-up";
 
         return "redirect:/result";
